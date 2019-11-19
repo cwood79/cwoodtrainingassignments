@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp" class="com.cg.core.Employee">
+	<!--  property type injection -->
+	<property name="id" value="86239"></property>
+	<property name="name" value="chris"></property>
+	<property name="addr" ref="a"></property>
+	<property name="skills">
+		<list>
+			<value>Java</value>
+			<value>React</value>
+			<value>Angular</value>
+			<value>Node</value>
+		</list>
+	</property>
+	<property name="months">
+		<map>
+			<entry key="1" value="jan"></entry>
+			<entry key="2" value="feb"></entry>
+			<entry key="3" value="mar"></entry>
+		</map>
+	</property>
+	
+	<!-- Constructor type injection
+		<constructor-arg value="86239"></constructor-arg>
+		<constructor-arg value="nagaraju setti"></constructor-arg> -->
+	</bean>
+	
+	<bean id="a" class="com.cg.core.Address">
+		<property name="state" value="IL"></property>
+		<property name="pincode" value="60631"></property>
+	</bean>
+    <!-- bean definitions here -->
+
+</beans>
