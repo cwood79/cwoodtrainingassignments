@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="emp" class="com.cg.core.Employee">
+	<!--  property type injection -->
+	<property name="id" value="86239"></property>
+	<property name="name" value="chris"></property>
+	<property name="salary" value="616156.00"></property>
+	<property name="BU" value="BU2"></property>
+	<property name="age" value="26"></property>
+	</bean>
+	
+	<bean id="emp2" class="com.cg.core2.Employee2">
+	<!--  property type injection -->
+	<property name="id" value="86239"></property>
+	<property name="name" value="chris"></property>
+	<property name="salary" value="616156.00"></property>
+	<property name="age" value="26"></property>
+	<property name="businessUnit" ref="s"></property>
+	
+	<!-- Constructor type injection
+		<constructor-arg value="86239"></constructor-arg>
+		<constructor-arg value="nagaraju setti"></constructor-arg> -->
+	</bean>
+	
+	<bean id="s" class="com.cg.core2.SBU">
+		<property name="sbuId" value="2"></property>
+		<property name="sbuName" value="bu2"></property>
+		<property name="sbuHead" value="bob"></property>
+	</bean>
+	
+    <!-- bean definitions here -->
+
+</beans>
